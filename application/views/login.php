@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Gentellela Alela! | </title>
 <?php $this->load->view('layout/css'); ?>
-  </head>
-
   <body class="login">
     <div>
       <a class="hiddenanchor" id="signup"></a>
@@ -43,8 +31,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-building"></i> Inventory</h1>
-                  <p>&copy; 2016</p>
+                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>
             </form>
@@ -79,8 +67,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-building"></i> Inventory</h1>
-                  <p>&copy; 2016</p>
+                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>
             </form>

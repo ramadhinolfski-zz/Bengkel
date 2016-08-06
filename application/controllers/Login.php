@@ -4,8 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 
 	public function index()
-	{
-		$this->load->view('login');
+	{	
+		$data = array("judul" => "Inventory Login", "konten" => "login");
+		$this->load->view('layout/wrapper', $data);
 	}
 
 }
