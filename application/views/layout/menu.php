@@ -23,15 +23,11 @@
       <div class="menu_section">
         <h3>General</h3>
         <ul class="nav side-menu">
-          <li><a href="home"><i class="fa fa-home"></i> Home </span></a></li>
-          <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+          <li class="<?php if($this->uri->segment(1)=="home"){echo "active";} ?>"><a href="<?=base_url('home');?>"><i class="fa fa-home"></i> Home </span></a></li>
+          <li><a><i class="fa fa-desktop"></i> Master <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="form.html">General Form</a></li>
+              <li class="<?php if($this->uri->segment(1)=="dataPengguna"){echo "active";} ?>"><a href="<?=base_url('master/dataPengguna');?>">Data Pengguna</a></li>
               <li><a href="form_advanced.html">Advanced Components</a></li>
-              <li><a href="form_validation.html">Form Validation</a></li>
-              <li><a href="form_wizards.html">Form Wizard</a></li>
-              <li><a href="form_upload.html">Form Upload</a></li>
-              <li><a href="form_buttons.html">Form Buttons</a></li>
             </ul>
           </li>
         </ul>
