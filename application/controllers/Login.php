@@ -5,8 +5,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{	
-		$data = array("judul" => "Inventory Login", "konten" => "login");
-		$this->load->view('layout/wrapper', $data);
+		$this->load->view('home/index');
 	}
 
 }

@@ -5,10 +5,8 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home/index');
+		$data = array('judul' => 'Home', 'konten' => 'home/index');
+		$this->load->view('layout/wrapper', $data);
 	}
 
 }
-
-/* End of file Home.php */
-/* Location: ./application/controllers/Home.php */
