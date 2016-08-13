@@ -1,4 +1,4 @@
-<div class="col-md-3 left_col">
+<div class="col-md-3 left_col menu_fixed">
   <div class="left_col scroll-view">
     <div class="navbar nav_title" style="border: 0;">
       <a href="index.html" class="site_title"><i class="fa fa-building"></i> <span>Inventory System</span></a>
@@ -36,6 +36,7 @@
             <li class="<?php if($this->uri->segment(1)=="transaksi/tambahPeralatan") ?>"><a href="<?=base_url('transaksi/tambahPeralatan'); ?>">Penambahan Alat</a></li>
               <li class="<?php if($this->uri->segment(1)=="transaksi/peminjaman") ?>"><a href="<?=base_url('transaksi/peminjaman'); ?>">Peminjaman</a></li>
               <li class="<?php if($this->uri->segment(1)=="transaksi/sewa") ?>"><a href="<?=base_url('transaksi/sewa'); ?>">Sewa Peralatan</a></li>
+              <li class="<?php if($this->uri->segment(1)=="transaksi/kerusakan") ?>"><a href="<?=base_url('transaksi/sewa'); ?>">Data Kerusakan</a></li>
             </ul>
           </li>
         </ul>
