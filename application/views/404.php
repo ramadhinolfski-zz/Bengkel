@@ -43,7 +43,7 @@
                     </div>
                   </div>
                 </form>
-                <a href="javascript:window.history.go(-1);">Kembali Lagi!</a>
+                <a href="javascript:window.history.go(-1); location.reload();">Kembali Lagi!</a>
               </div>
             </div>
           </div>
