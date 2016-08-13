@@ -2,7 +2,7 @@
     <!-- footer content -->
     <footer class="footer_fixed">
       <div class="pull-right">
-        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        Inventory Apps by <a href="https://ramadhinolfski.github.io">Ramadhan</a>
       </div>
       <div class="clearfix"></div>
     </footer>
