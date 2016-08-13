@@ -1,173 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Flot Examples: AJAX</title>
-	<link href="../examples.css" rel="stylesheet" type="text/css">
-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
-	<script type="text/javascript">
 
-	$(function() {
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	  <head>
+		  <title>Access forbidden!</title>
+		  <link rev="made" href="mailto:hanafiah.ramadhan@gmail.com" />
+<style type="text/css"><!--/*--><![CDATA[/*><!--*/ 
+    body { color: #000000; background-color: #FFFFFF; }
+        a:link { color: #0000CC; }
+	    p, address {margin-left: 3em;}
+	        span {font-size: smaller;}
+		/*]]>*/--></style>
+	  </head>
 
-		var options = {
-			lines: {
-				show: true
-			},
-			points: {
-				show: true
-			},
-			xaxis: {
-				tickDecimals: 0,
-				tickSize: 1
-			}
-		};
+	  <body>
+		  <h1>Access forbidden!</h1>
+		  <p>
 
-		var data = [];
 
-		$.plot("#placeholder", data, options);
+		    
 
-		// Fetch one series, adding to what we already have
+		      You don't have permission to access the requested object.
+		          It is either read-protected or not readable by the server.
 
-		var alreadyFetched = {};
+			    
 
-		$("button.fetchSeries").click(function () {
+		  </p>
+		  <p>
+		  If you think this is a server error, please contact
+		  the <a href="mailto:hanafiah.ramadhan@gmail.com">webmaster</a>.
 
-			var button = $(this);
+		  </p>
 
-			// Find the URL in the link right next to us, then fetch the data
+		  <h2>Error 403</h2>
+		  <address>
+			    <a href="/">localhost</a><br />
+			      <span>Apache/2.4.23 (Unix) OpenSSL/1.0.2h PHP/7.0.9</span>
+		  </address>
+	  </body>
+  </html>
 
-			var dataurl = button.siblings("a").attr("href");
 
-			function onDataReceived(series) {
-
-				// Extract the first coordinate pair; jQuery has parsed it, so
-				// the data is now just an ordinary JavaScript object
-
-				var firstcoordinate = "(" + series.data[0][0] + ", " + series.data[0][1] + ")";
-				button.siblings("span").text("Fetched " + series.label + ", first point: " + firstcoordinate);
-
-				// Push the new data onto our existing data array
-
-				if (!alreadyFetched[series.label]) {
-					alreadyFetched[series.label] = true;
-					data.push(series);
-				}
-
-				$.plot("#placeholder", data, options);
-			}
-
-			$.ajax({
-				url: dataurl,
-				type: "GET",
-				dataType: "json",
-				success: onDataReceived
-			});
-		});
-
-		// Initiate a recurring data update
-
-		$("button.dataUpdate").click(function () {
-
-			data = [];
-			alreadyFetched = {};
-
-			$.plot("#placeholder", data, options);
-
-			var iteration = 0;
-
-			function fetchData() {
-
-				++iteration;
-
-				function onDataReceived(series) {
-
-					// Load all the data in one pass; if we only got partial
-					// data we could merge it with what we already have.
-
-					data = [ series ];
-					$.plot("#placeholder", data, options);
-				}
-
-				// Normally we call the same URL - a script connected to a
-				// database - but in this case we only have static example
-				// files, so we need to modify the URL.
-
-				$.ajax({
-					url: "data-eu-gdp-growth-" + iteration + ".json",
-					type: "GET",
-					dataType: "json",
-					success: onDataReceived
-				});
-
-				if (iteration < 5) {
-					setTimeout(fetchData, 1000);
-				} else {
-					data = [];
-					alreadyFetched = {};
-				}
-			}
-
-			setTimeout(fetchData, 1000);
-		});
-
-		// Load the first series by default, so we don't have an empty plot
-
-		$("button.fetchSeries:first").click();
-
-		// Add the Flot version string to the footer
-
-		$("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
-	});
-
-	</script>
-</head>
-<body>
-
-	<div id="header">
-		<h2>AJAX</h2>
-	</div>
-
-	<div id="content">
-
-		<div class="demo-container">
-			<div id="placeholder" class="demo-placeholder"></div>
-		</div>
-
-		<p>Example of loading data dynamically with AJAX. Percentage change in GDP (source: <a href="http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tsieb020">Eurostat</a>). Click the buttons below:</p>
-
-		<p>The data is fetched over HTTP, in this case directly from text files. Usually the URL would point to some web server handler (e.g. a PHP page or Java/.NET/Python/Ruby on Rails handler) that extracts it from a database and serializes it to JSON.</p>
-
-		<p>
-			<button class="fetchSeries">First dataset</button>
-			[ <a href="data-eu-gdp-growth.json">see data</a> ]
-			<span></span>
-		</p>
-
-		<p>
-			<button class="fetchSeries">Second dataset</button>
-			[ <a href="data-japan-gdp-growth.json">see data</a> ]
-			<span></span>
-		</p>
-
-		<p>
-			<button class="fetchSeries">Third dataset</button>
-			[ <a href="data-usa-gdp-growth.json">see data</a> ]
-			<span></span>
-		</p>
-
-		<p>If you combine AJAX with setTimeout, you can poll the server for new data.</p>
-
-		<p>
-			<button class="dataUpdate">Poll for data</button>
-		</p>
-
-	</div>
-
-	<div id="footer">
-		Copyright &copy; 2007 - 2014 IOLA and Ole Laursen
-	</div>
-
-</body>
-</html>
