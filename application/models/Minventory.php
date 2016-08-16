@@ -3,9 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Minventory extends CI_Model {
 
-	function dataPengguna() {
-		$dataPengguna = $this->db->get('pengguna');
-		return $dataPengguna;
+	function daftarInstruktur() {
+		$dataInstruktur = $this->db->get('instruktur');
+		return $dataInstruktur;
 	}
 }
 

@@ -5,15 +5,12 @@ class Master extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('Minventory');
-		$data = array('judul' => 'Data Pengguna', 'konten' => 'master/index');
-		$this->load->view('layout/wrapper', $data);
+		
 	}
 	function dataPengguna()
 	{
 		$this->load->model('Minventory');
-		$data = $this->Minventory->dataPengguna()->result();
-		$pengguna = array('judul' => 'Data Pengguna', 'konten' => 'master/dataPengguna', 'dataPengguna' => $data);
+		$pengguna = array('judul' => 'Data Pengguna', 'konten' => 'master/dataPengguna', 'instruktur' => $this->Minventory->daftarInstruktur()->result());
 		$this->load->view('layout/wrapper', $pengguna);
 	}
 

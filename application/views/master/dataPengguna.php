@@ -38,34 +38,27 @@
             <!-- Konten -->
             <div class="row">
 <?php
-foreach ($dataPengguna as $user) {
+foreach ($instruktur as $instruktur) {
 ?>
               <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
                 <div class="well profile_view">
                   <div class="col-sm-12">
-                    <h4 class="brief"><i><?php echo $user->id_pengguna; ?></i></h4>
+                    <h4 class="brief"><i><?php echo $instruktur->id_instruktur; ?></i></h4>
                     <div class="left col-xs-7">
-                      <h2><?php echo $user->nama_pengguna;?></h2>
-                      <p><strong>About: </strong> <?php echo $user->kelas_pengguna; ?></p>
+                      <h2><?php echo $instruktur->nama_instruktur;?></h2>
+                      <p><strong>About: </p>
                       <ul class="list-unstyled">
-                        <li><i class="fa fa-building"></i> Address: </li>
-                        <li><i class="fa fa-phone"></i> Phone #: <?php echo $user->phone_pengguna;?> </li>
+                        <li><i class="fa fa-phone"></i> : <?php echo $instruktur->phone_instruktur;?> </li>
+                        <li><i class="fa fa-building"></i> : <?php echo $instruktur->alamat_instruktur; ?></li>
                       </ul>
                     </div>
                     <div class="right col-xs-5 text-center">
-                      <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                      <img src="<?=base_url(); echo $instruktur->foto_instruktur;?>" alt="" class="img-circle img-responsive">
                     </div>
                   </div>
                   <div class="col-xs-12 bottom text-center">
                     <div class="col-xs-12 col-sm-6 emphasis">
-                      <p class="ratings">
-                        <a>4.0</a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star-o"></span></a>
-                      </p>
+                      <?php echo $instruktur->nip_instruktur; ?>
                     </div>
                     <div class="col-xs-12 col-sm-6 emphasis">
                       <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
