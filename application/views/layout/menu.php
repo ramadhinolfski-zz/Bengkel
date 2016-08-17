@@ -26,9 +26,8 @@
           <li class="<?php if($this->uri->segment(1)==null || $this->uri->segment(0)=="home"){echo "active";} ?>"><a href="<?=base_url();?>"><i class="fa fa-home"></i> Home</a></li>
           <li><a><i class="fa fa-desktop"></i> Master <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li class="<?php if($this->uri->segment(1)=="dataPengguna"){echo "active";} ?>"><a href="<?=base_url('master/dataPengguna');?>">Data Pengguna</a></li>
-              <li class="<?php if($this->uri->segment(1)=="dataPeralatan"){echo "active";} ?>"><a href="<?=base_url('master/dataPeralatan');?>">Data Peralatan</a></li>
-              <li class="<?php if($this->uri->segment(1)=="dataBahan"){echo "active";} ?>"><a href="<?=base_url('master/dataBahan');?>">Data Bahan</a></li>
+              <li class="<?php if($this->uri->segment(1)=="dataPengguna"){echo "active";} ?>"><a href="<?=base_url('master/dataPengguna');?>">Pengguna</a></li>
+              <li class="<?php if($this->uri->segment(1)=="dataPeralatan"){echo "active";} ?>"><a href="<?=base_url('master/dataPeralatan');?>">Alat dan Bahan</a></li>
             </ul>
           </li>
           <li><a><i class="fa fa-book"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
