@@ -7,6 +7,11 @@ class Minventory extends CI_Model {
 		$dataInstruktur = $this->db->get('instruktur');
 		return $dataInstruktur;
 	}
+
+	function dataAlat() {
+		$dataAlat = $this->db->get('mstAlat');
+		return $dataAlat;
+	}
 }
 
 /* End of file Minventory.php */
